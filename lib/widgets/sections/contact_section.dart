@@ -41,8 +41,7 @@ class _ContactSectionState extends State<ContactSection> {
           ),
           backgroundColor: colors.cardBg,
           behavior: SnackBarBehavior.floating,
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
         ),
       );
       return;
@@ -115,9 +114,7 @@ class _ContactSectionState extends State<ContactSection> {
               height: 1.65,
             ),
           ).animate().fadeIn(delay: 200.ms, duration: 600.ms),
-
           const SizedBox(height: 48),
-
           isMobile
               ? Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -135,16 +132,11 @@ class _ContactSectionState extends State<ContactSection> {
                     Expanded(flex: 6, child: _buildForm(colors, isMobile)),
                   ],
                 ),
-
           const SizedBox(height: 80),
-
           _buildResumeDownload(colors, isMobile),
-
           const SizedBox(height: 64),
-
           Container(height: 1, color: colors.border),
           const SizedBox(height: 28),
-
           isMobile
               ? Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -177,8 +169,7 @@ class _ContactSectionState extends State<ContactSection> {
           iconColor: const Color(0xFF3B82F6),
           label: 'Email',
           value: AppStrings.contactEmail,
-          onTap: () => launchUrl(
-              Uri.parse('mailto:${AppStrings.contactEmail}'),
+          onTap: () => launchUrl(Uri.parse('mailto:${AppStrings.contactEmail}'),
               mode: LaunchMode.externalApplication),
         ),
         const SizedBox(height: 16),
@@ -271,8 +262,7 @@ class _ContactSectionState extends State<ContactSection> {
         borderRadius: BorderRadius.circular(8),
         borderSide: BorderSide(color: colors.accent, width: 1.5),
       ),
-      contentPadding:
-          const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+      contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
       hintStyle: TextStyle(color: colors.textMuted, fontSize: 14),
     );
 
@@ -345,17 +335,14 @@ class _ContactSectionState extends State<ContactSection> {
                   ),
                 ],
               ),
-
         const SizedBox(height: 16),
         Text('Subject', style: labelTextStyle),
         const SizedBox(height: 6),
         TextField(
           controller: _subjectCtrl,
           style: fieldTextStyle,
-          decoration:
-              inputDecoration.copyWith(hintText: 'Project Inquiry'),
+          decoration: inputDecoration.copyWith(hintText: 'Project Inquiry'),
         ),
-
         const SizedBox(height: 16),
         Text('Message', style: labelTextStyle),
         const SizedBox(height: 6),
@@ -366,9 +353,7 @@ class _ContactSectionState extends State<ContactSection> {
           decoration: inputDecoration.copyWith(
               hintText: 'Tell me about your project...'),
         ),
-
         const SizedBox(height: 20),
-
         GestureDetector(
           onTap: _sending ? null : _sendMessage,
           child: Container(
@@ -439,7 +424,7 @@ class _ContactSectionState extends State<ContactSection> {
                 ),
                 const SizedBox(height: 24),
                 GestureDetector(
-                  onTap: _downloadResume,
+                  // onTap: _downloadResume,
                   child: _resumeButton(colors),
                 ),
               ],
@@ -469,7 +454,7 @@ class _ContactSectionState extends State<ContactSection> {
                 ),
                 const SizedBox(width: 32),
                 GestureDetector(
-                  onTap: _downloadResume,
+                  // onTap: _downloadResume,
                   child: _resumeButton(colors),
                 ),
               ],
@@ -511,7 +496,8 @@ class _ContactSectionState extends State<ContactSection> {
       spacing: 0,
       runSpacing: 4,
       children: [
-        _socialRow(colors, 'GitHub', AppStrings.githubUrl, AppAssets.githubIcon),
+        _socialRow(
+            colors, 'GitHub', AppStrings.githubUrl, AppAssets.githubIcon),
         _socialRow(
             colors, 'LinkedIn', AppStrings.linkedInUrl, AppAssets.linkedinIcon),
         _socialRow(
